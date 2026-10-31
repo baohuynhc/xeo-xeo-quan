@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#243e32">
+  <title>Xèo Xèo Quán</title>
+  <meta name="description" content="Mở quán bánh xèo miền Tây, tự tay tráng bánh và phục vụ từng vị khách. Chơi ngay trên trình duyệt.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="viewport">
+    <div id="game-frame">
+      <canvas id="unity-canvas" width="720" height="1280" tabindex="0" aria-label="Xèo Xèo Quán"></canvas>
+      <section id="loading-screen" aria-label="Đang mở quán">
+        <div class="loading-content">
+          <img class="brand" src="loading-logo.png" alt="Xèo Xèo Quán" width="556" height="218">
+          <p id="loading-message" role="status" aria-live="polite">Đang chuẩn bị quán…</p>
+          <div id="loading-progress" role="progressbar" aria-label="Tải game" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <span id="loading-fill"></span>
+          </div>
+          <p id="loading-detail">Tiến trình được lưu trên trình duyệt này.</p>
+          <button id="loading-retry" type="button" hidden>THỬ LẠI</button>
+        </div>
+      </section>
+      <aside id="save-notice" role="status" aria-live="polite" hidden>
+        <span id="save-message"></span>
+        <button id="save-retry" type="button">THỬ LƯU LẠI</button>
+      </aside>
+    </div>
+  </main>
+  <noscript><p class="no-script">Hãy bật JavaScript để mở Xèo Xèo Quán.</p></noscript>
+  <script>
+    window.XEO_UNITY_LOADER = "Build/fedc0423de361ed9db22a2ffb6ce6ddf.loader.js";
+    window.XEO_UNITY_CONFIG = {
+      dataUrl: "Build/e7405bdc833001e50c50e15042231da7.data",
+      frameworkUrl: "Build/8b7bb2ac6032e4b45d96c4002d2b0710.framework.js",
+      codeUrl: "Build/77f96088de9c0dc83cc508c5446d840a.wasm",
+      streamingAssetsUrl: "StreamingAssets",
+      companyName: "Bao Huynh",
+      productName: "Xèo Xèo Quán",
+      productVersion: "1.0",
+      matchWebGLToCanvasSize: true,
+      devicePixelRatio: Math.min(window.devicePixelRatio || 1, 2)
+    };
+  </script>
+  <script src="boot.js" defer></script>
+</body>
+</html>
